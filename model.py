@@ -7,11 +7,10 @@ from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 import shutil
 
 
-car_train_dir = r'C:\Users\varsh\Videos\combined_dataset\train\cars'  
-car_validation_dir = r'C:\Users\varsh\Videos\combined_dataset\test\cars' 
-non_car_train_dir = r'C:\Users\varsh\Videos\combined_dataset\train\non-cars'  
-non_car_validation_dir = r'C:\Users\varsh\Videos\combined_dataset\test\non-cars'  
-
+car_train_dir = r'C:\Users\varsh\Videos\combined_dataset\train\cars'  # give your training dataset path on ur OS 
+car_validation_dir = r'C:\Users\varsh\Videos\combined_dataset\test\cars'  # give your validation/testing dataset path on ur OS
+non_car_train_dir = r'C:\Users\varsh\Videos\combined_dataset\train\non-cars'   # give your training dataset path on ur OS
+non_car_validation_dir = r'C:\Users\varsh\Videos\combined_dataset\test\non-cars'   # give your validation/testing dataset path on ur OS
 
 os.makedirs('combined_dataset/train/cars', exist_ok=True)
 os.makedirs('combined_dataset/train/non-cars', exist_ok=True)
@@ -94,6 +93,6 @@ def predict_car(image_path):
     return "Non-car" if prediction[0][0] >= 0.5 else "car"
 
 
-test_image_path = r"C:\Users\varsh\OneDrive\Desktop\download.jpg"
+test_image_path = r"C:\Users\varsh\OneDrive\Desktop\download.jpg" # give the image path on ur Os that u want the model to analyze and predict
 result = predict_car(test_image_path)
 print(f"The prediction for the test image is: {result}")
